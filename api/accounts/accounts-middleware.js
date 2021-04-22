@@ -10,7 +10,7 @@ exports.checkAccountPayload = (req, res, next) => {
     return res.status(400).json({
       message: 'name of account must be a string',
     })
-  } else if (req.body.name.length < 3 || req.body.name.length > 100) {
+  } else if (req.body.name.trim().length < 3 || req.body.name.trim().length > 100) {
     return res.status(400).json({
       message: 'name of account must be between 3 and 100',
     })
